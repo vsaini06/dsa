@@ -11,6 +11,21 @@
 - Time: O(n) | Space: O(1)
 - Watch out: min_price starts at float('inf'), not 0
 
+## Contains Duplicate
+- Pattern: Hash Set
+- Store seen numbers in a set, return True if current number already exists
+- Time: O(n) | Space: O(n)
+- Watch out: use set() not {} for existence checks, no need to store index
+- Pythonic shortcut: len(nums) != len(set(nums))
+
+## Move Zeroes
+- Pattern: Two Pointers
+- l tracks next non-zero position, r scans entire array
+- When r finds non-zero, swap with l, move l forward
+- Time: O(n) | Space: O(1)
+- Watch out: in-place modification, no return needed
+- Python swap: nums[l], nums[r] = nums[r], nums[l]
+
 ## General Reminders
 - Clarify: empty array? single element? return value if no answer?
 - State complexity BEFORE coding
