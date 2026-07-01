@@ -26,6 +26,14 @@
 - Watch out: in-place modification, no return needed
 - Python swap: nums[l], nums[r] = nums[r], nums[l]
 
+## 3Sum
+- Pattern: Sort + Two Pointers
+- Sort array, fix one number with i, use left/right pointers to find pair summing to -nums[i]
+- If total < 0 → move left right | If total > 0 → move right left | If 0 → found triplet
+- Skip duplicates: if nums[i] == nums[i-1] skip i | after finding triplet skip duplicate left/right values
+- Time: O(n²) | Space: O(1)
+- Watch out: method name is threeSum not 3sum, append as a list [nums[i], nums[left], nums[right]]
+
 ## General Reminders
 - Clarify: empty array? single element? return value if no answer?
 - State complexity BEFORE coding
