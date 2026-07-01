@@ -34,6 +34,14 @@
 - Time: O(n²) | Space: O(1)
 - Watch out: method name is threeSum not 3sum, append as a list [nums[i], nums[left], nums[right]]
 
+## Container With Most Water
+- Pattern: Two Pointers
+- Start with widest container (l=0, r=end), calculate area at every step
+- Always move the shorter pointer inward (chance of finding taller line)
+- area = (r - l) * min(heights[l], heights[r])
+- Time: O(n) | Space: O(1)
+- Watch out: compare heights not indices when deciding which pointer to move
+
 ## General Reminders
 - Clarify: empty array? single element? return value if no answer?
 - State complexity BEFORE coding
