@@ -50,7 +50,13 @@
 - Initialize seen = {0: -1} to handle subarrays starting at index 0
 - Only store first occurrence of each prefix_sum (for maximum length)
 - Time: O(n) | Space: O(n)
-- Watch out: seen = {0: -1} not {0, -1} (dict not set)
+
+## Max Consecutive Ones III
+- Pattern: Sliding Window
+- Track zeros in window, shrink from left when zeros > k
+- max_len = r - l + 1 after shrinking
+- Time: O(n) | Space: O(1)
+- Watch out: max_len update must be OUTSIDE the while loop
 
 ## General Reminders
 - Clarify: empty array? single element? return value if no answer?
