@@ -1,3 +1,28 @@
+# General notes
+
+| Problem | Pattern | Status |
+|---------|---------|--------|
+| Two Sum | HashMap | ✓ |
+| Best Time to Buy and Sell Stock | Sliding Window | ✓ |
+| Contains Duplicate | Hash Set | ✓ |
+| Move Zeroes | Two Pointers | ✓ |
+| 3Sum | Sort + Two Pointers | ✓ |
+| Container With Most Water | Two Pointers | ✓ |
+| Longest Subarray with Sum K | Prefix Sum + HashMap | ✓ |
+| Max Consecutive Ones III | Sliding Window | ✓ |
+
+**Patterns learned:**
+- HashMap / HashSet
+- Two Pointers
+- Sliding Window
+- Prefix Sum
+
+**Recurring watch-outs:**
+- enumerate() → index first, value second
+- Variable name consistency throughout
+- max_len update outside while loops
+- {0: -1} dict not {0, -1} set
+
 ## Two Sum
 - Pattern: Hash Map
 - Store seen numbers in a hashmap, check if complement exists
