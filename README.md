@@ -42,6 +42,16 @@
 - Time: O(n) | Space: O(1)
 - Watch out: compare heights not indices when deciding which pointer to move
 
+## Longest Subarray with Sum K
+- Pattern: Prefix Sum + Hashmap
+- Use when: negatives in array (rules out sliding window)
+- prefix_sum - k exists in seen → valid subarray found
+- length = i - seen[prefix_sum - k]
+- Initialize seen = {0: -1} to handle subarrays starting at index 0
+- Only store first occurrence of each prefix_sum (for maximum length)
+- Time: O(n) | Space: O(n)
+- Watch out: seen = {0: -1} not {0, -1} (dict not set)
+
 ## General Reminders
 - Clarify: empty array? single element? return value if no answer?
 - State complexity BEFORE coding
