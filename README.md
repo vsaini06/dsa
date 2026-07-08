@@ -83,6 +83,15 @@
 - Time: O(n) | Space: O(1)
 - Watch out: max_len update must be OUTSIDE the while loop
 
+## Binary Search (Classic)
+- Pattern: Binary Search
+- Sorted array, find exact target
+- while left <= right, mid = left + (right-left)//2
+- target > nums[mid] → left = mid+1 | target < nums[mid] → right = mid-1
+- Time: O(log n) | Space: O(1)
+- Watch out: left <= right not left < right, indentation inside while loop
+- mid uses // (floor division), always rounds down
+
 ## General Reminders
 - Clarify: empty array? single element? return value if no answer?
 - State complexity BEFORE coding
