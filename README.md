@@ -92,6 +92,16 @@
 - Watch out: left <= right not left < right, indentation inside while loop
 - mid uses // (floor division), always rounds down
 
+## Find Minimum in Rotated Sorted Array
+- Pattern: Binary Search (modified)
+- Compare nums[mid] with nums[right] to find which half has the drop
+- nums[mid] > nums[right] → minimum on right → left = mid + 1
+- nums[mid] < nums[right] → minimum on left including mid → right = mid
+- Loop condition: while left < right (not <=)
+- Return nums[left] after loop
+- Time: O(log n) | Space: O(1)
+- Watch out: right = mid not mid-1, use left < right not left <= right
+
 ## General Reminders
 - Clarify: empty array? single element? return value if no answer?
 - State complexity BEFORE coding
