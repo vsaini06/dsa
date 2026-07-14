@@ -1,4 +1,4 @@
-# General notes
+# General notes Week 1
 
 | Problem | Pattern | Status |
 |---------|---------|--------|
@@ -83,6 +83,53 @@
 - Time: O(n) | Space: O(1)
 - Watch out: max_len update must be OUTSIDE the while loop
 
+## Binary Search (Week 2): Master Guide
+
+### The 3 Key Decisions
+1. Exact value or boundary?
+2. Searching array or value range?
+3. right = mid or mid - 1?
+
+### Decision Framework
+| Trigger phrase | Loop | Right update | Return |
+|----------------|------|--------------|--------|
+| "find index of target" | left <= right | mid - 1 | -1 |
+| "find minimum/first" | left < right | mid | nums[left] |
+| "find maximum/last" | left < right | mid | nums[left] |
+| "find minimum X such that" | left < right | mid | left |
+
+### Variant 1 — Classic (exact match)
+- left <= right, return mid or -1
+- right = mid - 1 when mid is NOT the answer
+
+### Variant 2 — Left Boundary (find minimum)
+- left < right, right = mid (mid could be answer)
+- return nums[left] after loop
+
+### Variant 3 — Modified (rotated array)
+- Check which half is sorted first
+- left sorted if nums[left] <= nums[mid]
+- right sorted if nums[left] > nums[mid]
+- Then check if target falls in sorted half
+
+### Variant 4 — Search on Answer (value range)
+- Not searching array, searching range of values
+- left = min possible, right = max possible
+- Trigger: "find minimum X such that condition is true"
+- return left after loop
+
+### Signal Words
+- "find index" → Classic
+- "find minimum in rotated" → Left boundary  
+- "search in rotated" → Modified classic
+- "minimum days/speed/capacity" → Search on answer
+
+### Watch-outs
+- Always use left + (right-left)//2 not (left+right)//2
+- left <= right for exact match, left < right for boundary
+- right = mid not mid-1 when mid could be the answer
+- if/else is always O(1), doesn't affect loop complexity
+
 ## Binary Search (Classic)
 - Pattern: Binary Search
 - Sorted array, find exact target
@@ -101,6 +148,27 @@
 - Return nums[left] after loop
 - Time: O(log n) | Space: O(1)
 - Watch out: right = mid not mid-1, use left < right not left <= right
+
+## Search in Rotated Sorted Array
+- Pattern: Binary Search (modified)
+- One half is always sorted — figure out which, then check if target is in it
+- Left sorted if nums[left] <= nums[mid]
+  - target in [nums[left], nums[mid]) → right = mid - 1
+  - else → left = mid + 1
+- Right sorted if nums[left] > nums[mid]
+  - target in (nums[mid], nums[right]] → left = mid + 1
+  - else → right = mid - 1
+- Time: O(log n) | Space: O(1)
+- Watch out: use left <= right, return -1 after loop
+
+## Maximum Subarray (Kadane's Algorithm)
+- Pattern: Kadane's Algorithm (dynamic programming lite)
+- At each element: reset currSum to 0 if negative, then add current element
+- currSum = max(currSum, 0) then currSum += n
+- Track maxSum throughout, initialize to nums[0] not 0
+- Time: O(n) | Space: O(1)
+- Watch out: initialize maxSum = nums[0] not 0, handles all-negative arrays
+- Key insight: if current subarray is dragging you down, start fresh
 
 ## General Reminders
 - Clarify: empty array? single element? return value if no answer?
