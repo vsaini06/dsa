@@ -170,6 +170,14 @@
 - Watch out: initialize maxSum = nums[0] not 0, handles all-negative arrays
 - Key insight: if current subarray is dragging you down, start fresh
 
+## Product of Array Except Self
+- Pattern: Prefix + Suffix Products
+- Pass 1 (left→right): result[i] = product of all elements before i
+- Pass 2 (right→left): result[i] *= product of all elements after i
+- Key: store THEN update in both passes to exclude current element
+- Time: O(n) | Space: O(1) extra (output array doesn't count)
+- Watch out: result[i] *= suffix not result[i] = suffix in pass 2
+
 ## General Reminders
 - Clarify: empty array? single element? return value if no answer?
 - State complexity BEFORE coding
