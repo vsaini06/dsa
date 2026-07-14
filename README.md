@@ -178,6 +178,15 @@
 - Time: O(n) | Space: O(1) extra (output array doesn't count)
 - Watch out: result[i] *= suffix not result[i] = suffix in pass 2
 
+## Find Pivot Index
+- Pattern: Prefix Sum
+- total = sum(nums), track left_sum as you go
+- right_sum = total - left_sum - nums[i]
+- if left_sum == right_sum → return i
+- Update left_sum AFTER the check
+- Time: O(n) | Space: O(1)
+- Watch out: return -1 outside the loop, update left_sum after pivot check
+
 ## General Reminders
 - Clarify: empty array? single element? return value if no answer?
 - State complexity BEFORE coding
