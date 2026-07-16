@@ -147,6 +147,14 @@
 
 ---
 
+## [Valid Anagram](./Python/isAnagram.py)
+- Pattern: HashMap
+- Count character frequencies in both strings, compare hashmaps
+- Length check first → early return False if lengths differ
+- Python: countS == countT compares dicts directly
+- Time: O(n) | Space: O(1) — max 26 keys
+- Watch out: compare after full count, not inside loop
+
 ## General Interview Tips
 - Clarify: empty array? negatives? return value if no answer?
 - State complexity BEFORE coding
