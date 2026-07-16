@@ -155,6 +155,14 @@
 - Time: O(n) | Space: O(1) — max 26 keys
 - Watch out: compare after full count, not inside loop
 
+## [Valid Palindrome](./Python/isPalindrome.py)
+- Pattern: Two Pointers
+- Skip non-alphanumeric from both ends, compare lowercase characters
+- Inner while loops skip invalid chars, outer loop compares valid pairs
+- Time: O(n) | Space: O(1)
+- Watch out: not s[l].isalnum() to skip, s[l].lower() to compare
+- Nested while loops are still O(n); pointers never reset
+
 ## General Interview Tips
 - Clarify: empty array? negatives? return value if no answer?
 - State complexity BEFORE coding
