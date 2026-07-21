@@ -163,6 +163,13 @@
 - Watch out: not s[l].isalnum() to skip, s[l].lower() to compare
 - Nested while loops are still O(n); pointers never reset
 
+## [Reverse String](./Python/reverseString.py)
+- Pattern: Two Pointers
+- Swap characters from both ends moving inward
+- Time: O(n) | Space: O(1)
+- In-place modification, no return needed
+- Python swap: s[l], s[r] = s[r], s[l]
+
 ## General Interview Tips
 - Clarify: empty array? negatives? return value if no answer?
 - State complexity BEFORE coding
